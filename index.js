@@ -16,3 +16,73 @@ const monologueLines = [
   'No.',
   'I am the one who knocks!'
 ];
+
+const totalBatteries = batteryBatches.reduce((agg, el) => {return agg + el},0)
+
+
+
+let wordCountMap = monologueLines.reduce((agg, el, i, col)=>{
+  let em = el.split(" ").length.toString()
+  return Object.assign(agg,(agg[em] ? agg[em] += 1 : agg[em] = 1))
+},{})
+  // [...agg, el.split(" ").length]
+// [7, 7, 9, 11, 15, 15, 1, 6, 15, 6, 4, 14, 1, 6]
+
+// const wordCountMap = wordCountArr.reduce((agg, el, i, col)=>{
+//   return Object.assign(agg,(agg[el] ? agg[el] += 1 : agg[el] = 1))
+// },{})
+//
+//s
+//
+// let wordCountArr = monologueLines.reduce((agg, el, i, col)=>{return [...agg, el.split(" ").length]},[])
+// // [7, 7, 9, 11, 15, 15, 1, 6, 15, 6, 4, 14, 1, 6]
+//
+// const wordCountMap = wordCountArr.reduce((agg, el, i, col)=>{
+//   return Object.assign(agg,(agg[el] ? agg[el] += 1 : agg[el] = 1))
+// },{})
+//
+//
+
+
+
+
+
+
+
+// monologueLines.reduce((agg, el, i , col)=>{
+//   size = el.split(" ").length
+//   return Object.assign({}, agg, {size: agg[size]? agg[size]++ : 1})
+// },{})
+//
+// obj[meal.id] ? obj[meal.id] += 1 : obj[meal.id] = 1
+
+// const wordCountMap = monologueLines.reduce()
+//
+// monologueLines.reduce((agg, el, i, col)=>{
+//   size = el.split(" ").length
+//   return Object.assign({}, agg, {size: agg[size]? agg[size]++ : 1})
+// },{})
+
+// monologueLines.reduce((agg, el, i, col)=>{return [...agg, el.split(" ").length]},[])
+// [7, 7, 9, 11, 15, 15, 1, 6, 15, 6, 4, 14, 1, 6]
+
+//
+// mealTotals() {
+//   let arr = []
+//   for (let delivs of this.deliveries()) {
+//     for(let meal of store.meals) {
+//       if (meal.id === delivs.mealId) {
+//         arr.push(meal)
+//       }
+//     }
+//   }
+//   let obj = {}
+//   for(let meal of arr) {
+//     if(obj[meal.id]) {
+//       obj[meal.id] += 1;
+//     } else {
+//       obj[meal.id] = 1
+//     }
+//   }
+//   return obj;
+// }
